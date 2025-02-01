@@ -1,9 +1,11 @@
-*{
-    margin :0px;
+* {
+    margin: 0px;
     padding: 0px;
     font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Ensures padding and border are included in element dimensions */
 }
-body{
+
+body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
     height: 100vh;
     width: 100%;
@@ -11,64 +13,63 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-.container{
-    margin: 4rem auto 0;
-    padding: 50px 50px;
-    width: 50%;
-    height: 50vh;
+.container {
+    margin: 2rem auto 0; /* Reduced margin for smaller screens */
+    padding: 30px; /* Reduced padding for smaller screens */
+    width: 90%; /* Wider container for smaller screens */
+    max-width: 500px; /* Limits maximum width for larger screens */
     background-color: #ecf0f1;
     border-radius: 15px;
-    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
 h1 {
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Gradient for depth */
-    color: white; /* Better contrast */
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: white;
     padding: 15px 20px;
     border-radius: 12px;
-    margin-right: 13rem;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
     font-weight: bold;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 0; /* Reset margin for smaller screens */
 }
 
 h1:hover {
-    background: linear-gradient(135deg, #71b7e6, #3498db); /* Smooth hover effect */
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25); /* More depth on hover */
+    background: linear-gradient(135deg, #71b7e6, #3498db);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-h2{
-    margin : 20px 0;
-    
+h2 {
+    margin: 20px 0;
     padding: 13px;
     border-radius: 12px;
-    margin-right: 17rem;;
+    margin-right: 0; /* Reset margin for smaller screens */
+    font-size: 1.2rem; /* Reduced font size for smaller screens */
 }
 
 .content {
     display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Adds spacing between elements */
+    gap: 15px; /* Reduced gap for smaller screens */
     margin-top: 20px;
-    padding: 20px 40px;
-    max-width: 600px; /* Limits width for better responsiveness */
+    padding: 20px;
     background-color: #f8f9fa;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #password {
     font-size: 1rem;
     padding: 10px 15px;
-    width: 250px;
+    width: 100%; /* Full width on smaller screens */
     border: 2px solid #9b59b6;
     background: white;
     border-radius: 12px;
@@ -90,6 +91,7 @@ h2{
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    width: 100%; /* Full width on smaller screens */
 }
 
 #copy:hover {
@@ -98,7 +100,7 @@ h2{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-#create{
+#create {
     display: block;
     font-size: 1rem;
     padding: 10px 15px;
@@ -108,6 +110,31 @@ h2{
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    margin: 20px auto 0; /*Centers button */
-    width: fit-content;
+    margin: 20px auto 0;
+    width: 100%; /* Full width on smaller screens */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Further reduced padding for smaller screens */
+        width: 95%; /* Wider container for very small screens */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Smaller font size for smaller screens */
+        padding: 10px 15px; /* Reduced padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+
+    .content {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    #password, #copy, #create {
+        font-size: 0.9rem; /* Smaller font size for inputs and buttons */
+    }
 }
